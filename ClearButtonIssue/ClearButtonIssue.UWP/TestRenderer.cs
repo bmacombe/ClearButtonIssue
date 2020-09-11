@@ -10,8 +10,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Platform.UWP;
 
-[assembly: ExportRenderer(typeof(SfNumericTextBox), typeof(ActualClassRenderer))]
-[assembly: ExportRenderer(typeof(SfNumericTextBoxSubClass), typeof(SubClassRenderer))]
+[assembly: ExportRenderer(typeof(SfNumericTextBox), typeof(CustomerRenderer))]
+[assembly: ExportRenderer(typeof(SfNumericTextBoxSubClass), typeof(CustomerRenderer))]
 [assembly: ExportRenderer(typeof(Entry), typeof(EntryTestRenderer))]
 namespace ClearButtonIssue.UWP
 {
@@ -36,29 +36,29 @@ namespace ClearButtonIssue.UWP
 		//}
 	}
 
-	public class ActualClassRenderer : SfNumericTextBoxRenderer
-	{
-		protected override void OnElementChanged(ElementChangedEventArgs<SfNumericTextBox> e)
-		{
-			base.OnElementChanged(e);
-			if (Control != null)
-			{
-				switch (Element.ClearButtonVisibility)
-				{
-					case ClearButtonVisibilityMode.Never:
-						Control.ShowClearButton = false;
-						break;
-					case ClearButtonVisibilityMode.WhileEditing:
-						Control.ShowClearButton = true;
-						break;
-					default:
-						throw new ArgumentOutOfRangeException();
-				}
-			}
-		}
-	}
+	//public class ActualClassRenderer : SfNumericTextBoxRenderer
+	//{
+	//	protected override void OnElementChanged(ElementChangedEventArgs<SfNumericTextBox> e)
+	//	{
+	//		base.OnElementChanged(e);
+	//		if (Control != null)
+	//		{
+	//			switch (Element.ClearButtonVisibility)
+	//			{
+	//				case ClearButtonVisibilityMode.Never:
+	//					Control.ShowClearButton = false;
+	//					break;
+	//				case ClearButtonVisibilityMode.WhileEditing:
+	//					Control.ShowClearButton = true;
+	//					break;
+	//				default:
+	//					throw new ArgumentOutOfRangeException();
+	//			}
+	//		}
+	//	}
+	//}
 
-	public class SubClassRenderer : SfNumericTextBoxRenderer
+	public class CustomerRenderer : SfNumericTextBoxRenderer
 	{
 		protected override void OnElementChanged(ElementChangedEventArgs<SfNumericTextBox> e)
 		{
