@@ -2,10 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xForms="clr-namespace:Syncfusion.SfNumericTextBox.XForms;assembly=Syncfusion.SfNumericTextBox.XForms"
+             xmlns:clearButtonIssue="clr-namespace:ClearButtonIssue;assembly=ClearButtonIssue"
              x:Class="ClearButtonIssue.MainPage">
 
     <StackLayout>
+		<Label Text="SfNumericTextBox"></Label>
 		<xForms:SfNumericTextBox ClearButtonVisibility="Never"></xForms:SfNumericTextBox>
+
+		<Label Text="SfNumericTextBoxSubClass"></Label>
+		<clearButtonIssue:SfNumericTextBoxSubClass ClearButtonVisibility="Never"></clearButtonIssue:SfNumericTextBoxSubClass>
+
+        <Entry Text="With Custom Render, red background"></Entry>
     </StackLayout>
 
 </ContentPage>
